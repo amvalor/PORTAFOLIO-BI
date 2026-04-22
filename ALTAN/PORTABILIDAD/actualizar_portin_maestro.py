@@ -14,22 +14,22 @@ def ejecutar_pipeline_portin():
     cursor = conn.cursor()
     
     # Queries de mantenimiento 
-    sql_drop_temp = "DROP TABLE IF EXISTS analysis_aftersale.amv_portin_temp PURGE"
-    sql_drop_main = "DROP TABLE IF EXISTS analysis_aftersale.amv_portin PURGE"
+    sql_drop_temp = "DROP TABLE IF EXISTS ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ PURGE"
+    sql_drop_main = "DROP TABLE IF EXISTS ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ PURGE"
     
     # Paso 2: Respaldo de histórico
     sql_respaldo = """
-    CREATE TABLE IF NOT EXISTS analysis_aftersale.amv_portin_temp
+    CREATE TABLE IF NOT EXISTS ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     AS
     SELECT 
     *
-    FROM analysis_aftersale.amv_portin
+    FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     WHERE event_month BETWEEN (SELECT CAST(FROM_TIMESTAMP(NOW() - INTERVAL 13 MONTH, 'yyyyMM') AS INT)) AND (SELECT CAST(FROM_TIMESTAMP(NOW() - INTERVAL 3 MONTH, 'yyyyMM') AS INT))
     """
 
     # Paso 4: Query Maestra
     sql_principal = """
-    CREATE TABLE IF NOT EXISTS analysis_aftersale.amv_portin
+    CREATE TABLE IF NOT EXISTS ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     AS
     WITH port AS (
         SELECT 
@@ -51,7 +51,7 @@ def ejecutar_pipeline_portin():
                 ELSE "FUERA ALTAN"
             END AS tipo_porta
             , ROW_NUMBER () OVER (PARTITION BY msisdn_ported ORDER BY  load_processing_hour DESC) AS fila
-        FROM bss.portability_logs
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
         WHERE CAST(load_processing_hour/10000 AS INT) >= (SELECT CAST(FROM_TIMESTAMP(NOW() - INTERVAL 2 MONTH, 'yyyyMM') AS INT))
         AND transaction_result = '200' 
         AND operation = 'Portabilidad IN C'
@@ -60,49 +60,49 @@ def ejecutar_pipeline_portin():
         SELECT 
             DISTINCT CAST(ido AS INT) AS id
             , short_name AS nombre_dida
-        FROM catalog.catalog_operators_attachments_intx
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     )
     , cat_rida AS ( 
         SELECT 
             CAST(id_participante AS INT) AS id
             , nombre_corto_participante AS nombre_rida
-        FROM billing.catalog_port_operator
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     )
     , cat_beid AS (
         SELECT 
             DISTINCT be_prod AS be_id
             , UPPER(cliente) AS client_name
             , marca_unica
-        FROM analysis_reporting.sac_catalog_vf
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
         WHERE estado_general IN ('5. Integrado','6. Operando')
     )
     , oferta AS (
         SELECT 
-            520000000000 + crm_subscriber.msisdn AS msisdn
-            , crm_subscriber.imsi
-            , crm_offers.offer_id
-            , catalog_billing_product.rgu
-            , catalog_billing_product.product_name 
-            , catalog_billing_product.product_short_name
-            , crm_offers.primary_flag
-            , (crm_offers.exp_date - INTERVAL 6 HOUR) AS vigencia_oferta
-            , catalog_billing_product.end_date
-            , (crm_subscriber.active_date - INTERVAL 6 HOUR) AS active_date
-            , IF (crm_subscriber.sub_state = "B01", NULL, (crm_subscriber.mod_date - INTERVAL 6 HOUR)) AS fecha_baja
-            , IF (crm_subscriber.sub_state = "B01", DATEDIFF(NOW(),(crm_subscriber.active_date - INTERVAL 6 HOUR)),DATEDIFF((crm_subscriber.mod_date - INTERVAL 6 HOUR),(crm_subscriber.active_date - INTERVAL 6 HOUR))) AS dias_vivo
+            520000000000 + ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.msisdn AS msisdn
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.imsi
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.offer_id
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.rgu
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.product_name 
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.product_short_name
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.primary_flag
+            , (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.exp_date - INTERVAL 6 HOUR) AS vigencia_oferta
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.end_date
+            , (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.active_date - INTERVAL 6 HOUR) AS active_date
+            , IF (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B01", NULL, (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.mod_date - INTERVAL 6 HOUR)) AS fecha_baja
+            , IF (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B01", DATEDIFF(NOW(),(▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.active_date - INTERVAL 6 HOUR)),DATEDIFF((▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.mod_date - INTERVAL 6 HOUR),(▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.active_date - INTERVAL 6 HOUR))) AS dias_vivo
             , CASE 
-                WHEN crm_subscriber.sub_state = "B01" THEN "ACTIVE"
-                WHEN crm_subscriber.sub_state = "B02" THEN "DEACTIVE"
-                WHEN crm_subscriber.sub_state = "B03" THEN "SUSPEND"
-                WHEN crm_subscriber.sub_state = "B04" THEN "BARRING"
-                WHEN crm_subscriber.sub_state = "B05" THEN "PENDING"
-                WHEN crm_subscriber.sub_state = "B06" THEN "IDLE"
-                WHEN crm_subscriber.sub_state = "B07" THEN "PREDEACTIVATED"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B01" THEN "ACTIVE"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B02" THEN "DEACTIVE"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B03" THEN "SUSPEND"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B04" THEN "BARRING"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B05" THEN "PENDING"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B06" THEN "IDLE"
+                WHEN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_state = "B07" THEN "PREDEACTIVATED"
             END AS estatus 
-            , crm_subscriber.be_id
-        FROM bss.crm_subscriber
-        LEFT JOIN bss.crm_offers ON crm_subscriber.be_id = crm_offers.be_id AND crm_subscriber.sub_id = crm_offers.sub_id 
-        LEFT JOIN billing.catalog_billing_product ON catalog_billing_product.be_id = crm_subscriber.be_id AND crm_offers.offer_id = CAST (catalog_billing_product.offering_id AS INT) AND catalog_billing_product.end_date >= (crm_offers.exp_date - INTERVAL 6 HOUR) 
+            , ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.be_id
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+        LEFT JOIN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ON ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.be_id = ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.be_id AND ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_id = ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.sub_id 
+        LEFT JOIN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ON ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.be_id = ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.be_id AND ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.offer_id = CAST (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.offering_id AS INT) AND ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.end_date >= (▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀.exp_date - INTERVAL 6 HOUR) 
     )
     , distribuidor AS (
         SELECT 
@@ -111,14 +111,14 @@ def ejecutar_pipeline_portin():
             , msisdn_crm 
             , id_pos 
             , distribuidor 
-        FROM service.usrs_wm_distribuidores 
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     )
     , precio AS (
         SELECT 
             be_id
             , offering_id 
             , ROUND (tarifa_roam_bajo_prorrat, 2 ) AS tarifa_roam_bajo_prorrat 
-        FROM analysis_bdl.catalogo_precios_mkt_hist_V1
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
         WHERE vigente = 'VIGENTE'
     )
     , ini AS (
