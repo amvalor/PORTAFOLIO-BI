@@ -21,7 +21,7 @@ def generar_reporte():
             msisdn_ported, 
             fecha_porta, 
             tipo_porta 
-        FROM analysis_aftersale.amv_portin
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
         WHERE fecha_porta >= '2026-03-17 00:00:00.000'
     ),
     consumo_consolidado AS (
@@ -33,7 +33,7 @@ def generar_reporte():
             SUM(CASE WHEN offering_id = 1900000134 THEN chg_amount ELSE 0 END) / POWER(1024, 2) AS bono_134,
             SUM(CASE WHEN offering_id = 1900000235 THEN chg_amount ELSE 0 END) / POWER(1024, 2) AS bono_235,
             MAX(CASE WHEN offering_id IN (1900000096, 1900000134, 1900000235) THEN 'Y' ELSE 'N' END) AS bono_promo
-        FROM analysis_bdl.alchemist_cdrs
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
         WHERE service = 'dat'
           AND event_day >= 20260317
           AND product_family = 'MOVILIDAD'
