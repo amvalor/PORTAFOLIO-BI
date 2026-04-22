@@ -20,7 +20,7 @@ def auditoria_doble_check_285():
         CAST(chg_amount AS DOUBLE) / 1048576 AS consumo_mb,
         inner_cycle_begin_time,
         event_day
-    FROM analysis_bdl.alchemist_cdrs
+    FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     WHERE offering_id = 1809900285
       AND event_month = 202601
       AND service = 'dat'
