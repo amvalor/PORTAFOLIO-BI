@@ -1,4 +1,5 @@
 Hola, soy Alfredo Martinez | Business Intelligence Specialist 📊
+
 💡 Perfil Profesional
 Especialista en Business Intelligence enfocado en la optimización de procesos de datos, auditoría forense de tráfico de red y automatización de reportes estratégicos. 
 Mi enfoque principal es transformar volúmenes masivos de datos crudos en insights accionables que permitan corregir anomalías operativas y mejorar la rentabilidad del negocio.
