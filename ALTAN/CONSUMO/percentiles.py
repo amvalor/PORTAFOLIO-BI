@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 def calcular_percentiles_equitativos():
-    ruta_archivo = r"C:\Users\alfredo.martinez\Documents\BI\py\GENERAL\CONSUMOS\CONSUMOS_DECILES_FEBRERO.csv"
+    ruta_archivo = r"C:\Users\▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\BI\py\GENERAL\CONSUMOS\▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀"
     
     if not os.path.exists(ruta_archivo):
         print(f"❌ Error: No se encuentra el archivo en {ruta_archivo}")
