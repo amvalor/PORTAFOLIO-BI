@@ -27,6 +27,6 @@ Mi flujo de trabajo se basa en la integridad del dato:
 Este portafolio contiene scripts con propósitos demostrativos. Las conexiones a bases de datos y credenciales han sido omitidas o anonimizadas para proteger la infraestructura propietaria.
 
 📫 Contacto
-- LinkedIn: [Tu enlace aquí]
-- Ubicación Actual: Ciudad de México (Próximamente: Colombia 🇨🇴)
-- Meta 2026: Consolidación de portafolio técnico y expansión de proyectos internacionales de BI.
+- LinkedIn: www.linkedin.com/in/alfredo-martinez-valor
+- Ubicación Actual: Ciudad de México / Colombia
+- Metas: Consolidación de portafolio técnico y expansión de proyectos internacionales de BI.
