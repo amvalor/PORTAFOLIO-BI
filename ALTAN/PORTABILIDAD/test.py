@@ -41,14 +41,14 @@ if __name__ == "__main__":
         event_month
         , operation
         , COUNT(DISTINCT msisdn_ported) AS usuarios
-    FROM analysis_aftersale.amv_portout
+    FROM ▀▀▀▀▀▀▀▀▀
     GROUP BY 1,2
     UNION
     SELECT 
         event_month
         , operation
         , COUNT(DISTINCT msisdn_ported) AS usuarios
-    FROM analysis_aftersale.amv_portin
+    FROM ▀▀▀▀▀▀▀▀▀
     GROUP BY 1,2
     ) AS A
     ORDER BY 1 DESC
