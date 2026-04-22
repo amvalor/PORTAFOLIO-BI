@@ -108,7 +108,7 @@ def procesar_formato_comas(directorio):
     return lineas_csv
 
 # --- EJECUCIÓN ---
-ruta_hgm = r'C:\Users\alfredo.martinez\Documents\BI\py\BITACORA HGM'
+ruta_hgm = r'****************************************'
 resultado = procesar_formato_comas(ruta_hgm)
 
 if resultado:
