@@ -11,9 +11,9 @@ Mi enfoque principal es transformar volúmenes masivos de datos crudos en insigh
 - Implementación de lógicas de agregación por vigencia para garantizar la integridad de los datos de facturación y consumo.
 
 🛠️ Stack Tecnológico
-- Lenguajes: Python (Pandas, NumPy, Matplotlib), SQL (Impala, PostgreSQL, SQL Server).}
+- Lenguajes: Python (Pandas, NumPy, Matplotlib), SQL (Impala, PostgreSQL, SQL Server), PHP.
 - Herramientas: Git/GitHub, DBeaver, VS Code, Entornos Virtuales.
-- Especialidades: Análisis de Cohortes, Estadística Descriptiva (Mediana, Desviación Estándar $\sigma$), Automatización de ETLs, Limpieza de Datos Masivos.
+- Especialidades: Estadística Descriptiva, Automatización de ETLs, Limpieza de Datos Masivos.
 
 📈 Metodología de Trabajo
 Mi flujo de trabajo se basa en la integridad del dato:
