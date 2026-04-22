@@ -29,8 +29,8 @@ def auditar_asignaciones_reales(limite_gb=20):
                                 THEN c.offering_id END) AS ofertas_distintas,
             -- Registro de la sesión más pesada
             ROUND(MAX(c.chg_amount) / POWER(1024, 2), 2) AS max_sesion_mb
-        FROM analysis_aftersale.amv_portin p
-        INNER JOIN analysis_bdl.alchemist_cdrs c ON p.be_id = c.be_id AND p.msisdn_ported = c.msisdn
+        FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ p
+        INNER JOIN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ c ON p.be_id = c.be_id AND p.msisdn_ported = c.msisdn
         WHERE p.fecha_porta >= '2026-03-17 00:00:00.000'
           AND c.service = 'dat'
           AND c.event_day >= 20260317
