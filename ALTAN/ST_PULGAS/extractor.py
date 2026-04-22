@@ -33,7 +33,7 @@ class ExtractorPulgas:
             , comments
             , load_processing_timestamp
             , auto_expiration
-        FROM bss.portability_logs
+        FROM ▀▀▀▀▀▀▀▀▀
         WHERE CAST(load_processing_hour/10000 AS INT) >= (SELECT CAST(FROM_TIMESTAMP(NOW() - INTERVAL 3 MONTH, 'yyyyMM') AS INT))
         """
 
