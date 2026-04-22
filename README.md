@@ -5,10 +5,6 @@ Mi enfoque principal es transformar volúmenes masivos de datos crudos en insigh
 
 🚀 Proyectos Destacados
 - Auditoría Forense de Red: Análisis de Cohortes y Comportamiento de Uso
-Problema: Se detectó un reporte de consumo promedio de 20.95 GB en ofertas con límite de 9 GB, lo que generaba falsas alarmas sobre el uso de la red.
-Solución: Implementé un motor de análisis en Python que segmenta consumos por cohortes temporales (vigencia de bolsa vs. mes calendario) y utiliza RegEx para extraer cuotas dinámicas desde los metadatos de los productos.
-Impacto: Se demostró que la mediana real de consumo era de solo 3.42 GB y se identificó un 8.29% de incidencia de Re-entry (falla sistémica de cierre de ciclos), moviendo la discusión de "uso excesivo del cliente" a "optimización del aprovisionamiento".
-
 - Optimización de Consultas en Ecosistemas Big DataDesarrollo de consultas complejas en Impala/Cloudera optimizadas para procesar millones de registros sin saturar el protocolo Thrift (Error 08S01).
 - Implementación de lógicas de agregación por vigencia para garantizar la integridad de los datos de facturación y consumo.
 
