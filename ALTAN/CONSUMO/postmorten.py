@@ -22,8 +22,8 @@ def ejecutar_auditoria_final_descriptiva(limite_gb=20):
         CAST(c.chg_amount AS DOUBLE) / 1048576 AS consumo_mb,
         c.mon_cust_local_start_date AS fecha_evento,
         p.fecha_porta
-    FROM analysis_aftersale.amv_portin p
-    INNER JOIN analysis_bdl.alchemist_cdrs c 
+    FROM ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ p
+    INNER JOIN ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ c 
         ON CAST(p.msisdn_ported AS STRING) = CAST(c.msisdn AS STRING)
     WHERE p.fecha_porta >= '2026-03-17'
       AND c.event_day >= 20260317
